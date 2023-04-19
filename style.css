@@ -63,18 +63,18 @@ header > div > h1 {
     padding: 10px;
 }
 
-nav {
+.nav_bar {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem 1rem 0;
+    padding: 0 1rem 0 1rem;
     border-bottom: black solid;
 }
 
-nav > ul {
+.link_container {
     display: flex;
     gap: 8rem;
-    padding-left: 3rem;
+    /* background-color: aqua; */
 }
 
 .burger {
@@ -82,6 +82,7 @@ nav > ul {
     border: none;
     background: none;
     font-size: 3rem;
+    cursor: pointer;
 }
 
 .dropdown::after {
@@ -170,9 +171,17 @@ footer > a > img {
     height: 40px;
 }
 
+#chktoggle {
+    display: none;
+}
+
+#chktoggle:checked +ul.link_container {
+    display: block;
+}
+
 /* Responsive tablet */
 @media screen and (min-width:769px) and (max-width: 820px) {
-    nav > ul {
+    .link_container {
         gap: 5rem;
         padding-left: 3rem;
     }
@@ -180,11 +189,21 @@ footer > a > img {
 
 /* Responsive mobile */
 @media screen and (min-width: 360px) and (max-width: 768px) {
-    nav > ul {
-        display: none;
+    .nav_bar {
+        display: block;
+        height: auto;
     }
     .burger {
         display: block;
+        text-align: center;
+    }
+    .link_container {
+        display: none;
+    }
+    .link_container > li {
+        padding: 2rem 0 0 0;
+        align-items: center;
+        text-align: center;
     }
     .container_offer_singing {
         gap:10px;
@@ -192,5 +211,9 @@ footer > a > img {
     .container_offer,
     .container_singing {
         width: 100%;
+    }
+    #chktoggle:checked +ul.link_container {
+        display: block;
+        padding-bottom: 40px;
     }
 }
