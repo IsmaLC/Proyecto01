@@ -38,6 +38,14 @@ a {
     cursor: pointer;
 }
 
+#chktoggle {
+    display: none;
+}
+
+#chktoggle:checked +ul.link_container {
+    display: block;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -67,14 +75,13 @@ header > div > h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem 1rem 1rem;
     border-bottom: black solid;
 }
 
 .link_container {
     display: flex;
     gap: 8rem;
-    /* background-color: aqua; */
 }
 
 .burger {
@@ -88,6 +95,10 @@ header > div > h1 {
 .dropdown::after {
     content: '↓';
     padding-left: 0.1rem;
+}
+
+main {
+    margin-bottom: 2rem;
 }
 
 main > section > h2 {
@@ -156,27 +167,58 @@ main > section > ul {
 footer {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 0;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 2rem 3rem;
 }
 
-footer > p {
-    font-size: 20px;
+.footer_title {
+    padding-bottom: 25px;
 }
 
-footer > a > img {
+.newsletter_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter_container > div {
+    display: flex;
+    gap: 10px;
+}
+
+.newsletter_container > div > p {
+    font-size: 16px;
+}
+
+.information > li {
+    padding-bottom: .4rem;
+}
+
+.list_information {
+    color:white;
+    font-size: 16px;
+}
+
+.list_information:hover {
+    background-color: white;
+    color: black;
+}
+
+.social_container {
+    display:flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.social_container > div {
+    display: flex;
+    gap: 15px;
+}
+
+.social {
     width: 40px;
     height: 40px;
-}
-
-#chktoggle {
-    display: none;
-}
-
-#chktoggle:checked +ul.link_container {
-    display: block;
 }
 
 /* Responsive tablet */
@@ -214,6 +256,41 @@ footer > a > img {
     }
     #chktoggle:checked +ul.link_container {
         display: block;
+        padding-bottom: 40px;
+    }
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer_title {
+        font-size: 35px;
+    }
+    .newsletter_container {
+        align-items: center;
+        padding-bottom: 40px;
+    }
+    .newsletter_container > div {
+        flex-direction: column;
+    }
+    .newsletter_container > div > p {
+        font-size: 20px;
+    }
+    .information_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+    .list_information {
+        font-size: 20px;
+    }
+    .information_container .information > li {
+        display: flex;
+        justify-content: center;
+    }
+    .social_container {
+        align-items: center;
+        justify-content: center;
         padding-bottom: 40px;
     }
 }
